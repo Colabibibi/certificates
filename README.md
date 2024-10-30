@@ -68,37 +68,6 @@ fastlane match_all
 
 ---
 
-## 配置示例
-
-### Matchfile 配置示例
-
-确保您的 `Matchfile` 正确配置了 Git 仓库和应用标识符：
-
-```ruby
-git_url("git@github.com:yourusername/your-certificates-repo.git")
-app_identifier(["com.yourcompany.yourapp"])
-type("development", "adhoc")
-```
-
-### Fastfile 配置示例
-
-在 `Fastfile` 中定义一个 `match_all` lane，用于下载所有证书和配置文件：
-
-```ruby
-api_key = app_store_connect_api_key(
-    key_id: "YOUR_KEY_ID",
-    issuer_id: "YOUR_ISSUER_ID",
-    key_filepath: File.expand_path("../p8/AuthKey.p8", __dir__)
-)
-
-desc "下载所有需要的证书和描述文件到本地，不会重新创建证书和描述文件（只读方式）"
-lane :match_all do
-    match(api_key: api_key, type: "development", readonly: true)
-    match(api_key: api_key, type: "adhoc", readonly: true)
-end
-```
-
----
 
 ## 完成验证
 
