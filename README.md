@@ -53,7 +53,7 @@ rm -rf ~/Library/MobileDevice/Provisioning\ Profiles/*
 在终端中进入 iOS 项目的 `fastlane` 文件夹：
 
 ```bash
-cd path/to/your/project/ios/fastlane
+cd path/to/your/project/ios
 ```
 
 ### 4. 执行 `fastlane match_all` 同步证书和配置文件
